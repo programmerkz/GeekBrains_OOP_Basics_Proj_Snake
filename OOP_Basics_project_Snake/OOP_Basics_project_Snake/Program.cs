@@ -9,12 +9,13 @@ namespace OOP_Basics_project_Snake
     {
         static void Main(string[] args)
         {
-            ShowCaption();
+            ShowCaption();  // вывести заголовок
 
+            // Тест функции вывода символа в указанную позицию:
             PrintChar(2, 2, '*');
             PrintChar(5, 7, '$');
 
-            PressEnter();
+            PressEnter();   // ожидаем нажатия Enter
         }
 
 
