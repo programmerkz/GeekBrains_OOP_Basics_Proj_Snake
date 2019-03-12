@@ -9,6 +9,9 @@ namespace OOP_Basics_project_Snake
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("OOP Basics. Blank console application \"Snake\" \r\n \r\n");
+            Console.WriteLine("Press Enter to exit");
+            Console.ReadLine();
         }
     }
 }
