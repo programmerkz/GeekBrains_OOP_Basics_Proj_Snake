@@ -9,28 +9,8 @@ namespace OOP_Basics_project_Snake
     {
         static void Main(string[] args)
         {
-            Tools.ShowCaption();  // вывести заголовок
-
-            
-            // Тест функции вывода символа в указанную позицию:
-            Point p1 = new Point(4, 2, '%');
-            p1.Draw();
-
-            Point p2 = new Point(5, 3, '#');
-            p2.Draw();
-
-
-            // рисуем горизонтальную линию (с помощью специально созданного класса)
-            HorizontalLine hLine = new HorizontalLine(0, 30, 6, '=');
-            hLine.Draw();
-
-            // рисуем вертикальную линию (с помощью специально созданного класса)
-            VerticalLine vLine = new VerticalLine(4, 1, 10, '#');
-            vLine.Draw();
-
-
-
-
+            Tools.ShowCaption();    // вывести заголовок
+            Tools.DrawGameArea();   // нарисовать игровое поле
             Tools.WaitingEnter();   // ожидаем нажатия Enter
         }
     }
