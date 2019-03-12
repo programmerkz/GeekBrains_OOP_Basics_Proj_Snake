@@ -10,6 +10,17 @@ namespace OOP_Basics_project_Snake
         public int x, y;
         public char symb;
 
+        public Point()
+        {
+        }
+
+        public Point(int x, int y, char symb)
+        {
+            this.x = x;
+            this.y = y;
+            this.symb = symb;
+        }
+
         public bool Draw()
         {
             if ((x < 0) || (y < 0))
