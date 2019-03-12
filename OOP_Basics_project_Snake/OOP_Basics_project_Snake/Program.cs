@@ -24,8 +24,12 @@ namespace OOP_Basics_project_Snake
             HorizontalLine hLine = new HorizontalLine(0, 30, 6, '=');
             hLine.Draw();
 
-            
-            
+            // рисуем вертикальную линию (с помощью специально созданного класса)
+            VerticalLine vLine = new VerticalLine(4, 1, 10, '#');
+            vLine.Draw();
+
+
+
 
             Tools.WaitingEnter();   // ожидаем нажатия Enter
         }
