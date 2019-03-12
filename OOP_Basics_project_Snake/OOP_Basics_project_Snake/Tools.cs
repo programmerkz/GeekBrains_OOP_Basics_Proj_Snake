@@ -13,9 +13,25 @@ namespace OOP_Basics_project_Snake
             Console.WriteLine("OOP Basics. Blank console application \"Snake\"");
         }
 
+        public static void DrawGameArea()
+        {
+            HorizontalLine hLine = new HorizontalLine(0, 100, 1, '#');
+            hLine.Draw();
+
+            hLine = new HorizontalLine(30, 100, 1, '#');
+            hLine.Draw();
+
+            VerticalLine vLine = new VerticalLine(0, 1, 30, '#');
+            vLine.Draw();
+
+            vLine = new VerticalLine(100, 1, 30, '#');
+            vLine.Draw();
+        }
+
         public static void WaitingEnter()
         {
-            Console.WriteLine("\r\n \r\n Press Enter to exit");
+            Console.SetCursorPosition(0, 21);
+            Console.WriteLine("Press Enter to exit");
             Console.ReadLine();
         }
     }
