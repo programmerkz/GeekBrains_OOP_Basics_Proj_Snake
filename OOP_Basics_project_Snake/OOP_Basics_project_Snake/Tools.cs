@@ -18,7 +18,7 @@ namespace OOP_Basics_project_Snake
             HorizontalLine hLine = new HorizontalLine(0, 100, 1, '#');
             hLine.Draw();
 
-            hLine = new HorizontalLine(30, 100, 1, '#');
+            hLine = new HorizontalLine(0, 100, 30, '#');
             hLine.Draw();
 
             VerticalLine vLine = new VerticalLine(0, 1, 30, '#');
@@ -30,7 +30,7 @@ namespace OOP_Basics_project_Snake
 
         public static void WaitingEnter()
         {
-            Console.SetCursorPosition(0, 21);
+            Console.SetCursorPosition(0, 31);
             Console.WriteLine("Press Enter to exit");
             Console.ReadLine();
         }
