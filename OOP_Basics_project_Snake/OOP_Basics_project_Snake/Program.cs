@@ -20,13 +20,10 @@ namespace OOP_Basics_project_Snake
             p2.Draw();
 
 
-            // рисуем горизонтальную линию
-            Point p3 = new Point(0, 6, '=');
-            for (int i = 0; i < 30; i++)
-            {
-                p3.x++;
-                p3.Draw();
-            }
+            // рисуем горизонтальную линию (с помощью специально созданного класса)
+            HorizontalLine hLine = new HorizontalLine(0, 30, 6, '=');
+            hLine.Draw();
+
             
             
 
