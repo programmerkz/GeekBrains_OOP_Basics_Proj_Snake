@@ -9,37 +9,23 @@ namespace OOP_Basics_project_Snake
     {
         static void Main(string[] args)
         {
-            ShowCaption();  // вывести заголовок
+            Tools.ShowCaption();  // вывести заголовок
 
+            
             // Тест функции вывода символа в указанную позицию:
-            PrintChar(2, 2, '*');
-            PrintChar(5, 7, '$');
+            Point p1 = new Point();
+            p1.x = 4;
+            p1.y = 2;
+            p1.symb = '%';
+            p1.Draw();
 
-            PressEnter();   // ожидаем нажатия Enter
-        }
+            Point p2 = new Point();
+            p2.x = 4;
+            p2.y = 2;
+            p2.symb = '%';
+            p2.Draw();
 
-
-
-        static void ShowCaption()
-        {
-            Console.SetCursorPosition(0, 0);
-            Console.WriteLine("OOP Basics. Blank console application \"Snake\"");
-        }
-        static bool PrintChar(int x, int y, char ch)
-        {
-            if ((x < 0) || (y < 0))
-                return false;
-            else
-            {
-                Console.SetCursorPosition(x, y);
-                Console.Write(ch);
-                return true;
-            }
-        }
-        static void PressEnter()
-        {
-            Console.WriteLine("\r\n \r\n Press Enter to exit");
-            Console.ReadLine();
+            Tools.WaitingEnter();   // ожидаем нажатия Enter
         }
     }
 }
