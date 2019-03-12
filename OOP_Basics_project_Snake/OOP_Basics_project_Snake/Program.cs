@@ -13,30 +13,20 @@ namespace OOP_Basics_project_Snake
 
             
             // Тест функции вывода символа в указанную позицию:
-            Point p1 = new Point();
-            p1.x = 4;
-            p1.y = 2;
-            p1.symb = '%';
+            Point p1 = new Point(4, 2, '%');
             p1.Draw();
 
-            Point p2 = new Point();
-            p2.x = 5;
-            p2.y = 3;
-            p2.symb = '#';
+            Point p2 = new Point(5, 3, '#');
             p2.Draw();
 
 
             // рисуем горизонтальную линию
-            p1.y = 10;
-            p1.x = 0;
-            p1.symb = '=';
+            Point p3 = new Point(0, 6, '=');
             for (int i = 0; i < 30; i++)
             {
-                p1.x++;
-                p1.Draw();
+                p3.x++;
+                p3.Draw();
             }
-            
-            
             
             
 
