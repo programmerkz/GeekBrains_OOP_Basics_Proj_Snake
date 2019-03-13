@@ -8,7 +8,7 @@ namespace OOP_Basics_project_Snake
     static class Tools
     {
         public const int GAME_AREA_WIDTH = 80;
-        public const int GAME_AREA_HEIGHT = 20;
+        public const int GAME_AREA_HEIGHT = 30;
         public const int GAME_AREA_TOP = 1;
         public const int GAME_AREA_LEFT = 0;
 

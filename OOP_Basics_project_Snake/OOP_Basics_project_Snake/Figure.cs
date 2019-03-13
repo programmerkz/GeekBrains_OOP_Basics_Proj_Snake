@@ -24,7 +24,7 @@ namespace OOP_Basics_project_Snake
             return false;
         }
 
-        private bool IsHit(Point obstaclePoint)
+        internal bool IsHit(Point obstaclePoint)
         {
             foreach (Point p in pointList)
                 if (p.isHit(obstaclePoint))

@@ -12,11 +12,11 @@ namespace OOP_Basics_project_Snake
         {
             List<Figure> gameAreaWalls = Tools.DrawGameArea(true);
 
-            Snake snake = new Snake(new Point(13, 14, Tools.SNAKE_CHAR), 3, Direction.RIGHT);
+            Snake snake = new Snake(new Point(1, 2, Tools.SNAKE_CHAR), 3, Direction.RIGHT);
             snake.Draw();
 
             FoodCreator foodCreator = new FoodCreator(Tools.GAME_AREA_WIDTH, Tools.GAME_AREA_HEIGHT, Tools.GAME_AREA_TOP, Tools.GAME_AREA_LEFT, Tools.FOOD_CHAR);
-            Point food = foodCreator.CreateFood();
+            Point food = foodCreator.CreateFood(snake);
             food.Draw();
 
             bool isHit = false;
@@ -31,7 +31,7 @@ namespace OOP_Basics_project_Snake
 
                 if (snake.Eat(food))
                 {
-                    food = foodCreator.CreateFood();
+                    food = foodCreator.CreateFood(snake);
                     food.Draw();
                 }
                 else if (!isHit)
