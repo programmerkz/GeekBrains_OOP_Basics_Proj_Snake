@@ -43,6 +43,27 @@ namespace OOP_Basics_project_Snake
             }
 
             Tools.WaitingEnter();
+
+            /*
+            //Тестирование наследования
+            
+            List<Person> pList = new List<Person>();
+            pList.Add(new Person());
+            pList.Add(new Person("Vasya", 1984));
+            pList.Add(new Person("Vova", 1985));
+
+            List<Employee> eList = new List<Employee>();
+            eList.Add(new Employee(pList[0], "IBM"));
+            eList.Add(new Employee(pList[1], "IBM"));
+            eList.Add(new Employee(pList[2], "Sony"));
+
+            foreach (Person p in pList)
+                Console.WriteLine(p);
+
+            foreach (Employee emp in eList)
+                Console.WriteLine(emp);
+
+            */
         }
     }
 }
