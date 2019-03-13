@@ -36,6 +36,14 @@ namespace OOP_Basics_project_Snake
             else if (direction == Direction.DOWN)   { y += offset; }
         }
 
+        public bool isHit(Point p)
+        {
+            if ((x == p.x) && (y == p.y))
+                return true;
+            else
+                return false;
+        }
+
         public void Draw()
         {
             Console.SetCursorPosition(x, y);
