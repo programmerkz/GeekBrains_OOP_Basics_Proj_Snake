@@ -50,7 +50,7 @@ namespace OOP_Basics_project_Snake
             Console.SetCursorPosition(GAME_AREA_LEFT, GAME_AREA_TOP + GAME_AREA_HEIGHT + 1);
             //Console.WriteLine("buffer: h=" + Console.BufferHeight.ToString() + " w=" + Console.BufferWidth.ToString());
             //Console.WriteLine("window: h=" + Console.WindowHeight.ToString() + " w=" + Console.WindowWidth.ToString());
-            Console.WriteLine("Press Enter to exit");
+            Console.WriteLine("Game Over. Press Enter to exit");
             Console.ReadLine();
         }
     }
