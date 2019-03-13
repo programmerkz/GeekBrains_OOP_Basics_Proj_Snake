@@ -36,16 +36,16 @@ namespace OOP_Basics_project_Snake
             else if (direction == Direction.DOWN)   { y += offset; }
         }
 
-        public bool Draw()
+        public void Draw()
         {
-            if ((x < 0) || (y < 0))
-                return false;
-            else
-            {
                 Console.SetCursorPosition(x, y);
                 Console.Write(symb);
-                return true;
-            }
+        }
+
+        public void Clear()
+        {
+            symb = ' ';
+            Draw();
         }
 
         public override string ToString()
