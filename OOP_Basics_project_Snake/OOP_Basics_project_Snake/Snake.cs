@@ -71,6 +71,15 @@ namespace OOP_Basics_project_Snake
         }
 
 
+        public bool IsHitTale()
+        {
+            for (int i = 0; i < (pointList.Count - 1); i++)
+                if (pointList[i].isHit(GetNextPoint()))
+                    return true;
+
+            return false;
+        }
+
         public void HandleKey(ConsoleKey key)
         {
             if ((key == ConsoleKey.LeftArrow) && (moveDirection != Direction.RIGHT)) { moveDirection = Direction.LEFT; }
