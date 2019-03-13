@@ -7,7 +7,7 @@ namespace OOP_Basics_project_Snake
 {
     class Snake:Figure
     {
-        public Direction moveDirection;
+        Direction moveDirection;
 
         public Snake(Point tail, int lenth, Direction direction)
         {
@@ -51,6 +51,15 @@ namespace OOP_Basics_project_Snake
             Point nextHeadPoint = new Point(snakeHead);
             nextHeadPoint.Move(1, moveDirection);
             return nextHeadPoint;
+        }
+
+
+        public void HandleKey(ConsoleKey key)
+        {
+            if (key == ConsoleKey.LeftArrow) { moveDirection = Direction.LEFT; }
+            else if (key == ConsoleKey.RightArrow) { moveDirection = Direction.RIGHT; }
+            else if (key == ConsoleKey.UpArrow) { moveDirection = Direction.UP; }
+            else if (key == ConsoleKey.DownArrow) { moveDirection = Direction.DOWN; }
         }
     }
 }
