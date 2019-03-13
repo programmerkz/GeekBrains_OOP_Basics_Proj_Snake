@@ -10,23 +10,17 @@ namespace OOP_Basics_project_Snake
     {
         static void Main(string[] args)
         {
-            Tools.DrawGameArea(true);   // нарисовать игровое поле
-
-            Point snakeTail = new Point(13, 14, '*');
-            Snake snake = new Snake(snakeTail, 7, Direction.RIGHT);
+            Tools.DrawGameArea(true);
+            Snake snake = new Snake(new Point(13, 14, '*'), 12, Direction.RIGHT);
             snake.Draw();
 
-            for (int i = 0; i < 10; i++)
+            while (true)
             {
-                Thread.Sleep(300);
+                if (Console.KeyAvailable) { snake.HandleKey(Console.ReadKey().Key); }
+
+                Thread.Sleep(100);
                 snake.Move();
-                snake.Draw();
             }
-            
-
-
-
-            Tools.WaitingEnter();   // ожидаем нажатия Enter
         }
     }
 }
