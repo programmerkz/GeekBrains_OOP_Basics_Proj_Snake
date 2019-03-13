@@ -73,10 +73,10 @@ namespace OOP_Basics_project_Snake
 
         public void HandleKey(ConsoleKey key)
         {
-            if (key == ConsoleKey.LeftArrow) { moveDirection = Direction.LEFT; }
-            else if (key == ConsoleKey.RightArrow) { moveDirection = Direction.RIGHT; }
-            else if (key == ConsoleKey.UpArrow) { moveDirection = Direction.UP; }
-            else if (key == ConsoleKey.DownArrow) { moveDirection = Direction.DOWN; }
+            if ((key == ConsoleKey.LeftArrow) && (moveDirection != Direction.RIGHT)) { moveDirection = Direction.LEFT; }
+            else if ((key == ConsoleKey.RightArrow) && (moveDirection != Direction.LEFT)) { moveDirection = Direction.RIGHT; }
+            else if ((key == ConsoleKey.UpArrow) && (moveDirection != Direction.DOWN)) { moveDirection = Direction.UP; }
+            else if ((key == ConsoleKey.DownArrow) && (moveDirection != Direction.UP)) { moveDirection = Direction.DOWN; }
         }
     }
 }
