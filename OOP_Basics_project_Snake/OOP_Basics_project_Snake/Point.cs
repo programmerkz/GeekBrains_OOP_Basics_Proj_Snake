@@ -38,8 +38,8 @@ namespace OOP_Basics_project_Snake
 
         public void Draw()
         {
-                Console.SetCursorPosition(x, y);
-                Console.Write(symb);
+            Console.SetCursorPosition(x, y);
+            Console.Write(symb);
         }
 
         public void Clear()
