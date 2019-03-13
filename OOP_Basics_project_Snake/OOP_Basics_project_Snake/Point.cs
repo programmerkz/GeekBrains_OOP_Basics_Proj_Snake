@@ -39,7 +39,14 @@ namespace OOP_Basics_project_Snake
         public bool isHit(Point p)
         {
             if ((x == p.x) && (y == p.y))
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Draw();
+                Console.ResetColor();
+
                 return true;
+            }
+                
             else
                 return false;
         }
