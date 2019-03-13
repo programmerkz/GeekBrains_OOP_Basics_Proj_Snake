@@ -40,6 +40,23 @@ namespace OOP_Basics_project_Snake
             newHeadPoint.Draw();
         }
 
+
+        internal bool Eat(Point food)
+        {
+            Point nextHeadPoint = GetNextPoint();
+
+            if (nextHeadPoint.isHit(food))
+            {
+                food.symb = nextHeadPoint.symb;
+                pointList.Add(food);
+                food.Draw();    // надо перерисовать еду, т.к. она теперь стала частью змейки (объект Точка поменял символ)
+                return true;
+            }
+            else
+                return false;
+        }
+
+
         public Point GetNextPoint()
         {
             // получить точку Головы змейки (это последняя в списке)
