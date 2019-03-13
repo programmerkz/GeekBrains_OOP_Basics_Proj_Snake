@@ -7,11 +7,16 @@ namespace OOP_Basics_project_Snake
 {
     static class Tools
     {
-        const int GAME_AREA_WIDTH = 80;
-        const int GAME_AREA_HEIGHT = 20;
-        const int GAME_AREA_TOP = 1;
-        const int GAME_AREA_LEFT = 0;
-        const char GAME_AREA_CHAR = '#';
+        public const int GAME_AREA_WIDTH = 80;
+        public const int GAME_AREA_HEIGHT = 20;
+        public const int GAME_AREA_TOP = 1;
+        public const int GAME_AREA_LEFT = 0;
+
+        public const char GAME_AREA_CHAR = '#';
+        public const char FOOD_CHAR = '$';
+        public const char SNAKE_CHAR = '*';
+
+        public const int GAME_DELAY = 100;
 
 
         public static void ShowCaption()
