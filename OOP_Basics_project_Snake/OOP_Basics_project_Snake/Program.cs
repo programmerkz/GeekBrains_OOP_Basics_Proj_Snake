@@ -30,6 +30,7 @@ namespace OOP_Basics_project_Snake
             Console.WriteLine("Modifications...");
             Person ppp = eList[0];
             Employee eee = (Employee)ppp;
+            //Employee eee = (Employee) new Person();  // <<<--- так делать нельзя, т.к. не хватает "запчастей" (методов, полей и т.п.)
 
             foreach (Person p in pList)
                 Console.WriteLine(p);
