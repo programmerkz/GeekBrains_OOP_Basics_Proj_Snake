@@ -10,29 +10,38 @@ namespace OOP_Basics_project_Snake
     {
         static void Main(string[] args)
         {
-            Tools.DrawGameArea(true);
+            List<Person> pList = new List<Person>();
+            pList.Add(new Person());
+            pList.Add(new Person("Vasya", 1984));
+            pList.Add(new Person("Vova", 1985));
 
-            Snake snake = new Snake(new Point(13, 14, Tools.SNAKE_CHAR), 3, Direction.RIGHT);
-            snake.Draw();
+            List<Employee> eList = new List<Employee>();
+            eList.Add(new Employee(pList[0], "IBM"));
+            eList.Add(new Employee(pList[1], "IBM"));
+            eList.Add(new Employee(pList[2], "Sony"));
 
-            FoodCreator foodCreator = new FoodCreator(Tools.GAME_AREA_WIDTH, Tools.GAME_AREA_HEIGHT, Tools.GAME_AREA_TOP, Tools.GAME_AREA_LEFT, Tools.FOOD_CHAR);
-            Point food = foodCreator.CreateFood();
-            food.Draw();
+            foreach (Person p in pList)
+                Console.WriteLine(p);
 
-            while (true)
-            {
-                if (snake.Eat(food))
-                {
-                    food = foodCreator.CreateFood();
-                    food.Draw();
-                }
-                else
-                    snake.Move();
+            foreach (Employee emp in eList)
+                Console.WriteLine(emp);
 
-                Thread.Sleep(Tools.GAME_DELAY);
 
-                if (Console.KeyAvailable) { snake.HandleKey(Console.ReadKey().Key); }
-            }
+            Console.WriteLine("Modifications...");
+            Person ppp = eList[0];
+            Employee eee = (Employee)ppp;
+
+            foreach (Person p in pList)
+                Console.WriteLine(p);
+
+            foreach (Employee emp in eList)
+                Console.WriteLine(emp);
+
+
+
+
+
+            Console.ReadLine();
         }
     }
 }
