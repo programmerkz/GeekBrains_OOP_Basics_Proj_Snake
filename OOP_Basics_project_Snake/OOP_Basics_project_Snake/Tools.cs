@@ -22,11 +22,13 @@ namespace OOP_Basics_project_Snake
         public static void ShowCaption()
         {
             Console.SetCursorPosition(0, 0);
-            Console.WriteLine("OOP Basics. Blank console application \"Snake\"");
+            Console.WriteLine("GeekBrains - OOP Basics. The \"Snake\" by Alexandr Volossatov");
         }
 
         public static List<Figure> DrawGameArea(bool showCaption)
         {
+            Console.CursorVisible = false;
+
             Console.SetWindowSize(GAME_AREA_LEFT + GAME_AREA_WIDTH + 2, GAME_AREA_TOP + GAME_AREA_HEIGHT + 3);
             Console.SetBufferSize(GAME_AREA_LEFT + GAME_AREA_WIDTH + 2, GAME_AREA_TOP + GAME_AREA_HEIGHT + 3);
 
