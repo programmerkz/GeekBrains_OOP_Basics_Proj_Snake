@@ -24,12 +24,20 @@ namespace OOP_Basics_project_Snake
             this.foodSymbol = foodSymbol;
         }
 
-        public Point CreateFood()
+        public Point CreateFood(Figure snake)
         {
-            int x = random.Next(mapLeft + 1, mapLeft + mapWidth - 1);
-            int y = random.Next(mapTop + 1, mapTop + mapHeight - 1);
+            bool isFoodOverSnake = true;
+            Point foodPoint = null;
 
-            return new Point(x, y, foodSymbol);
+            while (isFoodOverSnake)
+            {
+                int x = random.Next(mapLeft + 1, mapLeft + mapWidth - 1);
+                int y = random.Next(mapTop + 1, mapTop + mapHeight - 1);
+                foodPoint = new Point(x, y, foodSymbol);
+
+                isFoodOverSnake = snake.IsHit(foodPoint);
+            }
+            return foodPoint;
         }
     }
 }

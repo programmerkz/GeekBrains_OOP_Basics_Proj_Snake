@@ -8,7 +8,7 @@ namespace OOP_Basics_project_Snake
     static class Tools
     {
         public const int GAME_AREA_WIDTH = 80;
-        public const int GAME_AREA_HEIGHT = 20;
+        public const int GAME_AREA_HEIGHT = 30;
         public const int GAME_AREA_TOP = 1;
         public const int GAME_AREA_LEFT = 0;
 
@@ -22,30 +22,29 @@ namespace OOP_Basics_project_Snake
         public static void ShowCaption()
         {
             Console.SetCursorPosition(0, 0);
-            Console.WriteLine("OOP Basics. Blank console application \"Snake\"");
+            Console.WriteLine("GeekBrains - OOP Basics. The \"Snake\" by Alexandr Volossatov");
         }
 
-        public static void DrawGameArea(bool showCaption)
+        public static List<Figure> DrawGameArea(bool showCaption)
         {
+            Console.CursorVisible = false;
+
             Console.SetWindowSize(GAME_AREA_LEFT + GAME_AREA_WIDTH + 2, GAME_AREA_TOP + GAME_AREA_HEIGHT + 3);
             Console.SetBufferSize(GAME_AREA_LEFT + GAME_AREA_WIDTH + 2, GAME_AREA_TOP + GAME_AREA_HEIGHT + 3);
 
             if (showCaption) { ShowCaption(); }
 
-            HorizontalLine hLine = new HorizontalLine(GAME_AREA_LEFT, GAME_AREA_LEFT + GAME_AREA_WIDTH, GAME_AREA_TOP, GAME_AREA_CHAR);
-            hLine.Draw();
+            List<Figure> gameAreaWalls = new List<Figure>();
 
-            hLine = new HorizontalLine(GAME_AREA_LEFT, GAME_AREA_LEFT + GAME_AREA_WIDTH, GAME_AREA_TOP + GAME_AREA_HEIGHT, GAME_AREA_CHAR);
-            hLine.Draw();
+            gameAreaWalls.Add(new HorizontalLine(GAME_AREA_LEFT, GAME_AREA_LEFT + GAME_AREA_WIDTH, GAME_AREA_TOP, GAME_AREA_CHAR));
+            gameAreaWalls.Add(new HorizontalLine(GAME_AREA_LEFT, GAME_AREA_LEFT + GAME_AREA_WIDTH, GAME_AREA_TOP + GAME_AREA_HEIGHT, GAME_AREA_CHAR));
+            gameAreaWalls.Add(new VerticalLine(GAME_AREA_LEFT, GAME_AREA_TOP, GAME_AREA_TOP + GAME_AREA_HEIGHT, GAME_AREA_CHAR));
+            gameAreaWalls.Add(new VerticalLine(GAME_AREA_LEFT + GAME_AREA_WIDTH, GAME_AREA_TOP, GAME_AREA_TOP + GAME_AREA_HEIGHT, GAME_AREA_CHAR));
 
-            VerticalLine vLine = new VerticalLine(GAME_AREA_LEFT, GAME_AREA_TOP, GAME_AREA_TOP + GAME_AREA_HEIGHT, GAME_AREA_CHAR);
-            vLine.Draw();
+            foreach (Figure wall in gameAreaWalls)
+                wall.Draw();
 
-            vLine = new VerticalLine(GAME_AREA_LEFT + GAME_AREA_WIDTH, GAME_AREA_TOP, GAME_AREA_TOP + GAME_AREA_HEIGHT, GAME_AREA_CHAR);
-            vLine.Draw();
-
-            
-
+            return gameAreaWalls;
         }
 
         public static void WaitingEnter()
@@ -53,7 +52,7 @@ namespace OOP_Basics_project_Snake
             Console.SetCursorPosition(GAME_AREA_LEFT, GAME_AREA_TOP + GAME_AREA_HEIGHT + 1);
             //Console.WriteLine("buffer: h=" + Console.BufferHeight.ToString() + " w=" + Console.BufferWidth.ToString());
             //Console.WriteLine("window: h=" + Console.WindowHeight.ToString() + " w=" + Console.WindowWidth.ToString());
-            Console.WriteLine("Press Enter to exit");
+            Console.WriteLine("Game Over. Press Enter to exit");
             Console.ReadLine();
         }
     }
